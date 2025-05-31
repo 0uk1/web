@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Личный кабинет{% endblock %}
+{% block content %}
+<h2>Личный кабинет</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить изменения</button>
+</form>
+
+<h3>Мои заказы</h3>
+<a href="{% url 'order_list' %}">Посмотреть все заказы</a>
+{% endblock %}
